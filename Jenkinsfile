@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install -y npm'
                 sh 'npm install'
                 sh 'npm run build'
+                
             }
         }
         
